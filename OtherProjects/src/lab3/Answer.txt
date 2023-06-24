@@ -1,0 +1,16 @@
+Q1:Is JAVA a Pass by Value or a Pass by Reference programming language?
+Answer:
+In Java, when you pass a variable to a method, the mechanism used is called "pass by value." This means that a copy of the variable's value is passed to the method parameter, rather than a reference to the variable itself.
+
+In Java, all variables of non-primitive types (objects) are references, which are essentially memory addresses pointing to the actual object. When you pass an object reference as a method argument, a copy of that reference is passed by value to the method. This means that changes made to the reference itself (like assigning a new object to it) will not affect the original reference outside the method. However, changes made to the state of the object (if it's mutable) will be reflected outside the method because the copy of the reference still points to the same object in memory.
+
+To summarize, Java is pass by value, but for non-primitive types (objects), the value being passed is a copy of the reference to the object.
+
+Q2: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+
+Answer: Because Java passes arguments to methods by value, not by reference. In the swap() method, even though we swap s1 and s2, 
+it only modifies the values of its local variables, which are copies of the references to the objects created in the main() method. 
+Therefore, the original objects themselves are left intact and their state doesn't change.
+
+Q3: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+Answer: Since we use the mutator of this object in this function, so the title of the JungleDVD changed
